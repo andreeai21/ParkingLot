@@ -29,15 +29,13 @@ public class User {
         this.username = username;
     }
     private String email;
-    private String password;
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
+    private String password;
 
     public String getPassword() {
         return password;
@@ -47,9 +45,9 @@ public class User {
         this.password = password;
     }
 
-    private Collection<Car> cars;
+    private Collection<Car> cars; //oneToMany
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner")
     public Collection<Car> getCars() {
         return cars;
     }
